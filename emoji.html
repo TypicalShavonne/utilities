@@ -5,22 +5,22 @@
 </head>
 <body>
 
-    <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.ctrlKey && event.key === 'v') {
-                var clipboardData = window.clipboardData || event.clipboardData;
-                var userClipboard = clipboardData.getData('Text');
+<script>
+    document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.key === 'v') {
+            var clipboardData = (event.clipboardData || window.clipboardData);
+            var userClipboard = clipboardData.getData('text/plain');
 
-                if (userClipboard.length === 1) {
-                    var unicodeValue = userClipboard.charCodeAt(0).toString(16).toUpperCase();
-                    alert(userClipboard + " converted to " + unicodeValue);
-                }
+            if (userClipboard.length === 1) {
+                var unicodeValue = userClipboard.charCodeAt(0).toString(16).toUpperCase();
+                alert(userClipboard + " converted to " + unicodeValue);
             }
-        });
-    </script>
+        }
+    });
+</script>
 
-    <h1>Clipboard Processing</h1>
-    <p>Press Ctrl + V to process the clipboard.</p>
+<h1>Clipboard Processing</h1>
+<p>Press Ctrl + V to process the clipboard.</p>
 
 </body>
 </html>
